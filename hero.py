@@ -1,4 +1,4 @@
-
+import random
 class Hero:
     """
     This is our hero blueprint.
@@ -17,8 +17,8 @@ class Hero:
         self.name = name
         self.hp = 100
         self.strength = 20
-        self.defe = 5
-        self.spec = "Nuclear Strike"
+        self.defe = defe
+        self.spec = spec
 
     def strike(self, atk):
         self.atk = atk
