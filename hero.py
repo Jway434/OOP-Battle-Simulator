@@ -1,3 +1,4 @@
+
 class Hero:
     """
     This is our hero blueprint.
@@ -12,17 +13,21 @@ class Hero:
         (Bonus) special_ability: A unique ability the hero can use.
     """
     
-    def __init__(self, name):
-        #TODO Set the hero's name.
-        #TODO Set the hero's health. You might give the hero more health than a goblin.
-        #TODO Set the hero's attack power. Should it be more consistent than the goblin's?
-    
+    def __init__(self, name, defe, spec):
+        self.name = name
+        self.hp = 100
+        self.strength = 20
+        self.defe = 5
+        self.spec = "Nuclear Strike"
 
-    def strike(self):
-        # TODO Implement the hero's attack logic. It could be stronger or more consistent than a goblin's.
-    
+    def strike(self, atk):
+        self.atk = atk
+
+
     def receive_damage(self, damage):
-        # TODO Implement take_damage
-        # TODO We should prevent health from going into the NEGATIVE
-    
-    #TODO define is_alive
+        self.hp -= damage
+        if self.hp < 0:
+            self.hp = 0
+
+    def is_alive(self):
+        return self.hp > 0
