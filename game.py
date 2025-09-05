@@ -1,27 +1,30 @@
 import random
+import time
 from goblin import Goblin
 from hero import Hero
+from boss import Boss
 
 def main():
     print("Welcome to the Battle Arena!")
     print("༼ ᓄºل͟º ༽ᓄ   ᕦ(ò_óˇ)ᕤ")
 
     # Create a hero
-    hero = Hero("Barikeys", 5, "Nuclear Strike")
+    hero = Hero("Barikeys", random.randint(1, 10000), random.randint(1, 1000))
 
     # Create goblins ༼ ºل͟º ༽ ༼ ºل͟º ༽ ༼ ºل͟º ༽
-    goblins = [Goblin(f"Goblin {i+1}") for i in range(5)]
+    goblins = [Goblin(f"Goblin {i+1}") for i in range(3)]
 
     # Keep track of how many goblins were defeated
     defeated_goblins = 0
 
     # Battle Loop 
-    while hero.is_alive() and any(goblin.is_alive() for goblin in goblins):
+    while hero.is_alive() and any(goblin.is_alive() for goblin in goblins and boss.is_alive()):
         print("\nNew Round!")
         
         # Hero's turn to attack
         target_goblin = random.choice([goblin for goblin in goblins if goblin.is_alive()])
-        damage = hero.strike(20 - defe)
+        print("Hero pulls out his gun, and shoots!")
+        damage =  random.randint(1, 1000000)  # Hero's attack reduced by defence
         print(f"Hero attacks {target_goblin.name} for {damage} damage!")
         target_goblin.take_damage(damage)
 
@@ -36,6 +39,7 @@ def main():
                 damage = goblin.attack()
                 print(f"{goblin.name} attacks hero for {damage} damage!")
                 hero.receive_damage(damage)
+        time.sleep(1.5)
 
     # Determine outcome
     if hero.is_alive():
