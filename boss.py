@@ -3,14 +3,7 @@ from enemy import Enemy
 class Boss(Enemy):
     """
     Boss blueprint.
-    
 
-    Attributes:
-        name: The name of our adventurer.
-        hp: The current health value.
-        strength: The amount of damage the boss can deal.
-        (Bonus) defence: A hero's ability to reduce incoming damage.
-        (Bonus) special_ability: A unique ability the hero can use.
     """
     
     def __init__(self, hp):
