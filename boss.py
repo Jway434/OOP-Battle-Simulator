@@ -1,5 +1,6 @@
 import random
-class Boss:
+from enemy import Enemy
+class Boss(Enemy):
     """
     Boss blueprint.
     
@@ -16,18 +17,11 @@ class Boss:
         self.name = "Jeromy"
         self.hp = 10000000000
     
-    def attack(self, dmg):
-        chooseattack = random.randint(1,2)
-        if chooseattack == 1:
+    def attack(self):
+        if random.randint(1,2) == 1:
             self.dmg = random.randint(1, 1000)
         else:
-
             self.dmg = random.randint(1,1000000)
-
-    def receive_damage(self, damage):
-        self.hp -= damage
-        if self.hp < 0:
-            self.hp = 0
-
+    
     def is_alive(self):
         return self.hp > 0
