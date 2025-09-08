@@ -18,7 +18,7 @@ def main():
     defeated_goblins = 0
 
     # Battle Loop 
-    while hero.is_alive() and any(goblin.is_alive() for goblin in goblins and boss.is_alive()):
+    while hero.is_alive() and any(goblin.is_alive() for goblin in goblins):
         print("\nNew Round!")
         
         # Hero's turn to attack
@@ -47,6 +47,10 @@ def main():
     else:
         print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
 
+    print("You hear a rumbaling, ITS A BOSS!!!")
+    while hero.is_alive() and boss.is_alive():
+        pass
+    
     # Final tally of goblins defeated
     print(f"\nTotal goblins defeated: {defeated_goblins} / {len(goblins)}")
 
