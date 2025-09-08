@@ -18,8 +18,15 @@ class Hero:
         self.hp = hp
         self.strength = strength
 
-    def strike(self, ):
-        self.atk = random.randint(1, 1000000)
+    def strike(self):
+        choice = input("Choose Attack(Gun or Sneeze): ")
+        if choice.lower() == "gun":
+           return random.randint(1, 100000)
+        elif choice.lower() == "sneeze":
+           return random.randint(1, 2)
+        else:
+           print("Invalid choice! Defaulting to Gun attack.")
+        return random.randint(1, 1000000)
 
     def receive_damage(self, damage):
         self.hp -= damage
