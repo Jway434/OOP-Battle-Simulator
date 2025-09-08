@@ -1,5 +1,5 @@
 import random
-class boss:
+class Boss:
     """
     Boss blueprint.
     
