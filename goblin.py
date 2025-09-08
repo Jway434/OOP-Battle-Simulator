@@ -1,5 +1,5 @@
 import random
-
+from enemy import Enemy
 class Goblin:
     """
     This is our goblin blueprint 
