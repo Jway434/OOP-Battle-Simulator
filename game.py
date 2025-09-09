@@ -49,7 +49,6 @@ def main():
     print("You hear a rumbling, ITS A BOSS!!!")
     while hero.is_alive() and Boss.is_alive():
         print("\nNew Round!")
-        print("Hero pulls out his gun, and shoots!")
         damage = hero.strike() # Hero's attack reduced by defence
         print(f"Hero attacks {Boss.name} for {damage} damage!")
         Boss.receive_damage(damage)
@@ -64,6 +63,12 @@ def main():
             print(f"{Boss.name} attacks hero for {damage} damage!")
             hero.receive_damage(damage)
         time.sleep(1.5)
+
+    if hero.is_alive():
+        print(f"\nThe hero has defeated the Boss! ༼ ᕤ◕◡◕ ༽ᕤ")
+    else:
+        print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
+
 
     
     # Final tally of goblins defeated
