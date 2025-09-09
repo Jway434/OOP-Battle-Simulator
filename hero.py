@@ -21,12 +21,12 @@ class Hero:
     def strike(self):
         choice = input("Choose Attack(death or Sneeze): ")
         if choice.lower() == "death":
-           return random.randint(1, 100000)
+           return 1000000
         elif choice.lower() == "sneeze":
            return random.randint(1, 2)
         else:
            print("Invalid choice! Defaulting to death attack.")
-        return random.randint(1, 1000000)
+        return 1000000
 
     def receive_damage(self, damage):
         self.hp -= damage
